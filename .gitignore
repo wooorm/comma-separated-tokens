@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+coverage/
+node_modules/
+comma-separated-tokens.js
+comma-separated-tokens.min.js
