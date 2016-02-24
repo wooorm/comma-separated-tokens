@@ -66,10 +66,10 @@ white-space per value.
 
 *   `options` (`Object`, optional):
 
-    *   'padLeft' (`boolean`, default: `true`)
+    *   `padLeft` (`boolean`, default: `true`)
         — Whether to pad a space before a token;
 
-    *   'padRight' (`boolean`, default: `false`)
+    *   `padRight` (`boolean`, default: `false`)
         — Whether to pad a space after a token.
 
 **Returns**: `string` — Comma-separated tokens.
