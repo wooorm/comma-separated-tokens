@@ -82,7 +82,7 @@ function stringify(values, options) {
      */
 
     if (values[values.length - 1] === EMPTY) {
-        values.push(EMPTY);
+        values = values.concat(EMPTY);
     }
 
     return trim(values.join(
