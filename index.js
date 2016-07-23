@@ -8,7 +8,9 @@
 
 'use strict';
 
-/* eslint-env commonjs */
+/* Expose. */
+exports.parse = parse;
+exports.stringify = stringify;
 
 /*
  * Dependencies.
@@ -36,30 +38,30 @@ var EMPTY = '';
  * @return {Array.<string>} - Tokens.
  */
 function parse(value) {
-    var values = [];
-    var input = String(value || EMPTY);
-    var index = input.indexOf(C_COMMA);
-    var lastIndex = 0;
-    var end = false;
-    var val;
+  var values = [];
+  var input = String(value || EMPTY);
+  var index = input.indexOf(C_COMMA);
+  var lastIndex = 0;
+  var end = false;
+  var val;
 
-    while (!end) {
-        if (index === -1) {
-            index = input.length;
-            end = true;
-        }
-
-        val = trim(input.slice(lastIndex, index));
-
-        if (val || !end) {
-            values.push(val);
-        }
-
-        lastIndex = index + 1;
-        index = input.indexOf(C_COMMA, lastIndex);
+  while (!end) {
+    if (index === -1) {
+      index = input.length;
+      end = true;
     }
 
-    return values;
+    val = trim(input.slice(lastIndex, index));
+
+    if (val || !end) {
+      values.push(val);
+    }
+
+    lastIndex = index + 1;
+    index = input.indexOf(C_COMMA, lastIndex);
+  }
+
+  return values;
 }
 
 /**
@@ -74,29 +76,20 @@ function parse(value) {
  * @return {string} - Comma-separated tokens.
  */
 function stringify(values, options) {
-    var settings = options || {};
-    var left = settings.padLeft;
+  var settings = options || {};
+  var left = settings.padLeft;
 
-    /*
-     * Ensure the last empty entry is seen.
-     */
+  /*
+   * Ensure the last empty entry is seen.
+   */
 
-    if (values[values.length - 1] === EMPTY) {
-        values = values.concat(EMPTY);
-    }
+  if (values[values.length - 1] === EMPTY) {
+    values = values.concat(EMPTY);
+  }
 
-    return trim(values.join(
-        (settings.padRight ? C_SPACE : EMPTY) +
-        C_COMMA +
-        (left || left === undefined || left === null ? C_SPACE : EMPTY)
-    ));
+  return trim(values.join(
+    (settings.padRight ? C_SPACE : EMPTY) +
+    C_COMMA +
+    (left || left === undefined || left === null ? C_SPACE : EMPTY)
+  ));
 }
-
-/*
- * Expose.
- */
-
-module.exports = {
-    'parse': parse,
-    'stringify': stringify
-};
