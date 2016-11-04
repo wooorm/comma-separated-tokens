@@ -1,12 +1,10 @@
 # comma-separated-tokens [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
 
-<!--lint disable heading-increment list-item-spacing no-duplicate-headings-->
-
 Parse and stringify comma-separated tokens according to the [spec][].
 
 ## Installation
 
-[npm][npm-install]:
+[npm][]:
 
 ```bash
 npm install comma-separated-tokens
@@ -94,7 +92,7 @@ white-space per value.
 
 [codecov]: https://codecov.io/github/wooorm/comma-separated-tokens
 
-[npm-install]: https://docs.npmjs.com/cli/install
+[npm]: https://docs.npmjs.com/cli/install
 
 [license]: LICENSE
 
