@@ -1,18 +1,8 @@
-/**
- * @author Titus Wormer
- * @copyright 2016 Titus Wormer
- * @license MIT
- * @module comma-separated-tokens
- * @fileoverview Test suite for `comma-separated-tokens`.
- */
-
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var commaSeparated = require('./index.js');
 
-/* Tests. */
 test('comma-separated-tokens', function (t) {
   t.equal(
     typeof commaSeparated,
