@@ -42,7 +42,7 @@ function parse(value) {
 
 /* Compile an array to comma-separated tokens.
  * `options.padLeft` (default: `true`) pads a space left of each
- * token, and `options.passRight` (default: `false`) pads a space
+ * token, and `options.padRight` (default: `false`) pads a space
  * to the right of each token. */
 function stringify(values, options) {
   var settings = options || {};
