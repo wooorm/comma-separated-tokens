@@ -16,7 +16,7 @@ npm install comma-separated-tokens
 var commaSeparated = require('comma-separated-tokens');
 
 commaSeparated.parse(' a ,b,,d d '); //=> ['a', 'b', '', 'd d']
-commaSeparated.stringify(values); //=> 'a, b, , d d'
+commaSeparated.stringify(['a', 'b', '', 'd d']); //=> 'a, b, , d d'
 ```
 
 ## API
