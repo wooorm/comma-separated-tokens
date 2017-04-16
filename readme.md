@@ -12,71 +12,33 @@ npm install comma-separated-tokens
 
 ## Usage
 
-Dependencies:
-
 ```javascript
 var commaSeparated = require('comma-separated-tokens');
-```
 
-Parsing:
-
-```javascript
-var values = commaSeparated.parse(' a ,b,,d d ');
-```
-
-Yields:
-
-```js
-[ 'a', 'b', '', 'd d' ]
-```
-
-Compiling:
-
-```javascript
-var value = commaSeparated.stringify(values);
-```
-
-Yields:
-
-```js
-'a, b, , d d'
+commaSeparated.parse(' a ,b,,d d '); //=> ['a', 'b', '', 'd d']
+commaSeparated.stringify(values); //=> 'a, b, , d d'
 ```
 
 ## API
 
 ### `commaSeparated.parse(value)`
 
-Parse comma-separated tokens to an array of strings, according to the
-[spec][].
-
-###### Parameters
-
-*   `value` (`string`) — Comma-separated tokens.
-
-###### Returns
-
-`Array.<string>` — List of tokens.
+Parse comma-separated tokens (`string`) to an array of strings, according
+to the [spec][].
 
 ### `commaSeparated.stringify(values[, options])`
 
-Compile an array of strings to comma-separated tokens.
+Compile an array of strings to comma-separated tokens (`string`).
 Handles empty items at start or end correctly.
 Note that it’s not possible to specify initial or final
 white-space per value.
 
-###### Parameters
+###### `options`
 
-*   `values` (`Array.<string>`) — List of tokens;
-*   `options` (`Object`, optional):
-
-    *   `padLeft` (`boolean`, default: `true`)
-        — Whether to pad a space before a token;
-    *   `padRight` (`boolean`, default: `false`)
-        — Whether to pad a space after a token.
-
-###### Returns
-
-`string` — Comma-separated tokens.
+*   `padLeft` (`boolean`, default: `true`)
+    — Whether to pad a space before a token;
+*   `padRight` (`boolean`, default: `false`)
+    — Whether to pad a space after a token.
 
 ## License
 
