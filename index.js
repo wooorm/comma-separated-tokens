@@ -1,13 +1,10 @@
 'use strict';
 
-/* Expose. */
 exports.parse = parse;
 exports.stringify = stringify;
 
-/* Dependencies. */
 var trim = require('trim');
 
-/* Constants. */
 var C_COMMA = ',';
 var C_SPACE = ' ';
 var EMPTY = '';
