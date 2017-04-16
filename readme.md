@@ -40,6 +40,15 @@ white-space per value.
 *   `padRight` (`boolean`, default: `false`)
     — Whether to pad a space after a token.
 
+## Related
+
+*   [`collapse-white-space`](https://github.com/wooorm/collapse-white-space)
+    — Replace multiple white-space characters with a single space
+*   [`property-information`](https://github.com/wooorm/property-information)
+    — Information on HTML properties
+*   [`space-separated-tokens`](https://github.com/wooorm/space-separated-tokens)
+    — Parse/stringify space-separated tokens
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
