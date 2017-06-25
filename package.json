@@ -12,14 +12,14 @@
     "parse",
     "stringify"
   ],
-  "files": [
-    "index.js"
-  ],
-  "repository": "https://github.com/wooorm/comma-separated-tokens",
+  "repository": "wooorm/comma-separated-tokens",
   "bugs": "https://github.com/wooorm/comma-separated-tokens/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+  ],
+  "files": [
+    "index.js"
   ],
   "dependencies": {
     "trim": "0.0.1"
