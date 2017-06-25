@@ -33,12 +33,15 @@ Handles empty items at start or end correctly.
 Note that it’s not possible to specify initial or final
 white-space per value.
 
-###### `options`
+##### `options`
 
-*   `padLeft` (`boolean`, default: `true`)
-    — Whether to pad a space before a token;
-*   `padRight` (`boolean`, default: `false`)
-    — Whether to pad a space after a token.
+###### `options.padLeft`
+
+Whether to pad a space before a token (`boolean`, default: `true`).
+
+###### `options.padRight`
+
+Whether to pad a space after a token (`boolean`, default: `false`).
 
 ## Related
 
