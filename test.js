@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var commaSeparated = require('./index.js');
+var commaSeparated = require('.');
 
 test('comma-separated-tokens', function (t) {
   t.equal(
