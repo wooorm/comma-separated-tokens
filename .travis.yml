@@ -5,6 +5,7 @@ node_js:
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: ekcr/RWCTEhdhpFedfFk5CJc4O2xl1U06AMfRgBCpLuc57/L+Qglbir4122qh+R8aQ76V5g0qWdh6qSDwo6vxlH7FnK89VuNJ6usNShZRPihoj+Tb+T60MDfrBo56Nr8cHHqgLK8GmnHePWuuFnw2uNf82+NUR8LtX9VBbPlgMCr5bzINtN+x5JkADj8Q8NbvfbHbfcPmj6kCK0mxqldP3QwpE9OfuAT3gqobl/OF3FTbSo2MLZW8kb2DP9paTz2/S4PI/zT3IkEjnRLi1MKS/Vo1DVxUT1cb6ok2X5D+E0Wf09RpHr3S4UAtmQy4F65N4M4Is13/Kpuj4zsWLhwRICrEWmh8PTwoKASHjXcvAmbk5biZCEcFGMddb66VUjgWfDIIrtMBK8MceJvi8QYBLaruP/kH5zcQ0C9To86c7ZUbSFRBA24pf1skwNJEUN/XRswQcxTIqlmFZLlIeAPFrU58Ytdw+f84608K2igp+ueLTnCl9OzOR/kO2pgNwCEQibzSKUmz3C/J1yTPA7WDUs+wNMVg4PVvYqPFpmqJ/GdBlkOMvqx5SYyh4r/OmPvXtEqLeWX0yM2ebbBw084NrnPsLuj3BFPimmFp/50DZJXv31vy+xRlbvsPCuWTDXxzHs6+NOlvF8nrXn7FEdJt9maqXDlp9Izfi045fpVAA8=
   file:
@@ -12,4 +13,3 @@ deploy:
     - "comma-separated-tokens.min.js"
   on:
     tags: true
-    skip_cleanup: true
