@@ -1,40 +1,40 @@
-'use strict';
+'use strict'
 
-exports.parse = parse;
-exports.stringify = stringify;
+exports.parse = parse
+exports.stringify = stringify
 
-var trim = require('trim');
+var trim = require('trim')
 
-var C_COMMA = ',';
-var C_SPACE = ' ';
-var EMPTY = '';
+var comma = ','
+var space = ' '
+var empty = ''
 
 /* Parse comma-separated tokens to an array. */
 function parse(value) {
-  var values = [];
-  var input = String(value || EMPTY);
-  var index = input.indexOf(C_COMMA);
-  var lastIndex = 0;
-  var end = false;
-  var val;
+  var values = []
+  var input = String(value || empty)
+  var index = input.indexOf(comma)
+  var lastIndex = 0
+  var end = false
+  var val
 
   while (!end) {
     if (index === -1) {
-      index = input.length;
-      end = true;
+      index = input.length
+      end = true
     }
 
-    val = trim(input.slice(lastIndex, index));
+    val = trim(input.slice(lastIndex, index))
 
     if (val || !end) {
-      values.push(val);
+      values.push(val)
     }
 
-    lastIndex = index + 1;
-    index = input.indexOf(C_COMMA, lastIndex);
+    lastIndex = index + 1
+    index = input.indexOf(comma, lastIndex)
   }
 
-  return values;
+  return values
 }
 
 /* Compile an array to comma-separated tokens.
@@ -42,17 +42,14 @@ function parse(value) {
  * token, and `options.padRight` (default: `false`) pads a space
  * to the right of each token. */
 function stringify(values, options) {
-  var settings = options || {};
-  var left = settings.padLeft;
+  var settings = options || {}
+  var left = settings.padLeft === false ? empty : space
+  var right = settings.padRight ? space : empty
 
   /* Ensure the last empty entry is seen. */
-  if (values[values.length - 1] === EMPTY) {
-    values = values.concat(EMPTY);
+  if (values[values.length - 1] === empty) {
+    values = values.concat(empty)
   }
 
-  return trim(values.join(
-    (settings.padRight ? C_SPACE : EMPTY) +
-    C_COMMA +
-    (left || left === undefined || left === null ? C_SPACE : EMPTY)
-  ));
+  return trim(values.join(right + comma + left))
 }
