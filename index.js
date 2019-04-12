@@ -3,8 +3,6 @@
 exports.parse = parse
 exports.stringify = stringify
 
-var trim = require('trim')
-
 var comma = ','
 var space = ' '
 var empty = ''
@@ -24,7 +22,7 @@ function parse(value) {
       end = true
     }
 
-    val = trim(input.slice(lastIndex, index))
+    val = input.slice(lastIndex, index).trim()
 
     if (val || !end) {
       values.push(val)
@@ -51,5 +49,5 @@ function stringify(values, options) {
     values = values.concat(empty)
   }
 
-  return trim(values.join(right + comma + left))
+  return values.join(right + comma + left).trim()
 }

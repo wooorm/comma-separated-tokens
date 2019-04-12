@@ -21,9 +21,6 @@
   "files": [
     "index.js"
   ],
-  "dependencies": {
-    "trim": "0.0.1"
-  },
   "devDependencies": {
     "browserify": "^16.0.0",
     "esmangle": "^1.0.1",
