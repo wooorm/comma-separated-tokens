@@ -1,4 +1,9 @@
-# comma-separated-tokens [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# comma-separated-tokens
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 Parse and stringify comma-separated tokens according to the [spec][].
 
@@ -58,13 +63,21 @@ Whether to pad a space after a token (`boolean`, default: `false`).
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/comma-separated-tokens.svg
+[build-badge]: https://img.shields.io/travis/wooorm/comma-separated-tokens.svg
 
-[travis]: https://travis-ci.org/wooorm/comma-separated-tokens
+[build]: https://travis-ci.org/wooorm/comma-separated-tokens
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/comma-separated-tokens.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/comma-separated-tokens.svg
 
-[codecov]: https://codecov.io/github/wooorm/comma-separated-tokens
+[coverage]: https://codecov.io/github/wooorm/comma-separated-tokens
+
+[downloads-badge]: https://img.shields.io/npm/dm/comma-separated-tokens.svg
+
+[downloads]: https://www.npmjs.com/package/comma-separated-tokens
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/comma-separated-tokens.svg
+
+[size]: https://bundlephobia.com/result?p=comma-separated-tokens
 
 [npm]: https://docs.npmjs.com/cli/install
 
