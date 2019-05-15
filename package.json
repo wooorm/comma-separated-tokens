@@ -51,10 +51,6 @@
   "xo": {
     "prettier": true,
     "esnext": false,
-    "rules": {
-      "no-var": "off",
-      "prefer-arrow-callback": "off"
-    },
     "ignores": [
       "comma-separated-tokens.js"
     ]
