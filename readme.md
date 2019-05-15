@@ -70,6 +70,6 @@ Whether to pad a space after a token (`boolean`, default: `false`).
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
 [spec]: https://html.spec.whatwg.org/#comma-separated-tokens
