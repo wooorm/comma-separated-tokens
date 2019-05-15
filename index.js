@@ -7,7 +7,7 @@ var comma = ','
 var space = ' '
 var empty = ''
 
-/* Parse comma-separated tokens to an array. */
+// Parse comma-separated tokens to an array.
 function parse(value) {
   var values = []
   var input = String(value || empty)
@@ -35,16 +35,15 @@ function parse(value) {
   return values
 }
 
-/* Compile an array to comma-separated tokens.
- * `options.padLeft` (default: `true`) pads a space left of each
- * token, and `options.padRight` (default: `false`) pads a space
- * to the right of each token. */
+// Compile an array to comma-separated tokens.
+// `options.padLeft` (default: `true`) pads a space left of each token, and
+// `options.padRight` (default: `false`) pads a space to the right of each token.
 function stringify(values, options) {
   var settings = options || {}
   var left = settings.padLeft === false ? empty : space
   var right = settings.padRight ? space : empty
 
-  /* Ensure the last empty entry is seen. */
+  // Ensure the last empty entry is seen.
   if (values[values.length - 1] === empty) {
     values = values.concat(empty)
   }
