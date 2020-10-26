@@ -3,17 +3,13 @@
 exports.parse = parse
 exports.stringify = stringify
 
-var comma = ','
-var space = ' '
-var empty = ''
-
 // Parse comma-separated tokens to an array.
 function parse(value) {
-  var values = []
-  var input = String(value || empty)
-  var index = input.indexOf(comma)
-  var lastIndex = 0
-  var end = false
+  var tokens = []
+  var input = String(value || '')
+  var index = input.indexOf(',')
+  var start = 0
+  var end
   var token
 
   while (!end) {
@@ -22,17 +18,17 @@ function parse(value) {
       end = true
     }
 
-    token = input.slice(lastIndex, index).trim()
+    token = input.slice(start, index).trim()
 
     if (token || !end) {
-      values.push(token)
+      tokens.push(token)
     }
 
-    lastIndex = index + 1
-    index = input.indexOf(comma, lastIndex)
+    start = index + 1
+    index = input.indexOf(',', start)
   }
 
-  return values
+  return tokens
 }
 
 // Compile an array to comma-separated tokens.
@@ -40,13 +36,17 @@ function parse(value) {
 // `options.padRight` (default: `false`) pads a space to the right of each token.
 function stringify(values, options) {
   var settings = options || {}
-  var left = settings.padLeft === false ? empty : space
-  var right = settings.padRight ? space : empty
 
   // Ensure the last empty entry is seen.
-  if (values[values.length - 1] === empty) {
-    values = values.concat(empty)
+  if (values[values.length - 1] === '') {
+    values = values.concat('')
   }
 
-  return values.join(right + comma + left).trim()
+  return values
+    .join(
+      (settings.padRight ? ' ' : '') +
+        ',' +
+        (settings.padLeft === false ? '' : ' ')
+    )
+    .trim()
 }
