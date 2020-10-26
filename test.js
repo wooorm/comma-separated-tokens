@@ -3,10 +3,10 @@
 var test = require('tape')
 var commaSeparated = require('.')
 
-test('comma-separated-tokens', function(t) {
+test('comma-separated-tokens', function (t) {
   t.equal(typeof commaSeparated, 'object', 'should be an `object`')
 
-  t.test('.parse()', function(st) {
+  t.test('.parse()', function (st) {
     st.equal(typeof commaSeparated.parse, 'function', 'should be a method')
 
     st.deepEqual(
@@ -36,7 +36,7 @@ test('comma-separated-tokens', function(t) {
     st.end()
   })
 
-  t.test('.stringify()', function(st) {
+  t.test('.stringify()', function (st) {
     st.equal(typeof commaSeparated.stringify, 'function', 'should be a method')
 
     st.deepEqual(

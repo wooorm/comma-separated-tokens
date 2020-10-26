@@ -14,7 +14,7 @@ function parse(value) {
   var index = input.indexOf(comma)
   var lastIndex = 0
   var end = false
-  var val
+  var token
 
   while (!end) {
     if (index === -1) {
@@ -22,10 +22,10 @@ function parse(value) {
       end = true
     }
 
-    val = input.slice(lastIndex, index).trim()
+    token = input.slice(lastIndex, index).trim()
 
-    if (val || !end) {
-      values.push(val)
+    if (token || !end) {
+      values.push(token)
     }
 
     lastIndex = index + 1
