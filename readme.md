@@ -62,9 +62,9 @@ Whether to pad a space after a token (`boolean`, default: `false`).
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/comma-separated-tokens.svg
+[build-badge]: https://github.com/wooorm/comma-separated-tokens/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/comma-separated-tokens
+[build]: https://github.com/wooorm/comma-separated-tokens/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/comma-separated-tokens.svg
 
