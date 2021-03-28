@@ -1,8 +1,5 @@
 .DS_Store
 *.log
-.nyc_output/
 coverage/
 node_modules/
-comma-separated-tokens.js
-comma-separated-tokens.min.js
 yarn.lock

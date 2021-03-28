@@ -9,6 +9,9 @@ Parse and stringify comma-separated tokens according to the [spec][].
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -26,12 +29,15 @@ commaSeparated.stringify(['a', 'b', '', 'd d']) //=> 'a, b, , d d'
 
 ## API
 
-### `commaSeparated.parse(value)`
+This package exports the following identifiers: `parse`, `stringify`.
+There is no default export.
+
+### `parse(value)`
 
 Parse comma-separated tokens (`string`) to an array of strings, according
 to the [spec][].
 
-### `commaSeparated.stringify(values[, options])`
+### `stringify(values[, options])`
 
 Compile an array of strings to comma-separated tokens (`string`).
 Handles empty items at start or end correctly.
