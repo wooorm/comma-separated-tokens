@@ -3,8 +3,7 @@ import {parse, stringify} from './index.js'
 
 test('comma-separated-tokens', function (t) {
   t.test('.parse()', function (st) {
-    st.equal(typeof parse, 'function', 'should be a method')
-
+    // @ts-ignore runtime.
     st.deepEqual(parse(), [], 'should return an empty array for an empty value')
 
     st.deepEqual(
@@ -25,8 +24,6 @@ test('comma-separated-tokens', function (t) {
   })
 
   t.test('.stringify()', function (st) {
-    st.equal(typeof stringify, 'function', 'should be a method')
-
     st.deepEqual(
       stringify([]),
       '',

@@ -1,10 +1,24 @@
-// Parse comma-separated tokens to an array.
+/**
+ * @typedef {Object} StringifyOptions
+ * @property {boolean} [padLeft=true] Whether to pad a space before a token (`boolean`, default: `true`).
+ * @property {boolean} [padRight=false] Whether to pad a space after a token (`boolean`, default: `false`).
+ */
+
+/**
+ * Parse comma separated tokens to an array.
+ *
+ * @param {string} value
+ * @returns {Array.<string>}
+ */
 export function parse(value) {
+  /** @type {Array.<string>} */
   var tokens = []
   var input = String(value || '')
   var index = input.indexOf(',')
   var start = 0
+  /** @type {boolean} */
   var end
+  /** @type {string} */
   var token
 
   while (!end) {
@@ -26,9 +40,13 @@ export function parse(value) {
   return tokens
 }
 
-// Compile an array to comma-separated tokens.
-// `options.padLeft` (default: `true`) pads a space left of each token, and
-// `options.padRight` (default: `false`) pads a space to the right of each token.
+/**
+ * Serialize an array of strings to comma separated tokens.
+ *
+ * @param {Array.<string>} values
+ * @param {StringifyOptions} [options]
+ * @returns {string}
+ */
 export function stringify(values, options) {
   var settings = options || {}
 

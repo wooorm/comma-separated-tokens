@@ -5,7 +5,7 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-Parse and stringify comma-separated tokens according to the [spec][].
+Parse and stringify comma separated tokens according to the [spec][].
 
 ## Install
 
@@ -21,10 +21,10 @@ npm install comma-separated-tokens
 ## Use
 
 ```js
-var commaSeparated = require('comma-separated-tokens')
+import {parse, stringify} from 'comma-separated-tokens'
 
-commaSeparated.parse(' a ,b,,d d ') //=> ['a', 'b', '', 'd d']
-commaSeparated.stringify(['a', 'b', '', 'd d']) //=> 'a, b, , d d'
+parse(' a ,b,,d d ') //=> ['a', 'b', '', 'd d']
+stringify(['a', 'b', '', 'd d']) //=> 'a, b, , d d'
 ```
 
 ## API
@@ -34,12 +34,12 @@ There is no default export.
 
 ### `parse(value)`
 
-Parse comma-separated tokens (`string`) to an array of strings, according
+Parse comma separated tokens (`string`) to an array of strings, according
 to the [spec][].
 
 ### `stringify(values[, options])`
 
-Compile an array of strings to comma-separated tokens (`string`).
+Compile an array of strings to comma separated tokens (`string`).
 Handles empty items at start or end correctly.
 Note that it’s not possible to specify initial or final whitespace per value.
 
