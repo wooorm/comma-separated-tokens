@@ -43,7 +43,7 @@ export function parse(value) {
 /**
  * Serialize an array of strings to comma separated tokens.
  *
- * @param {Array.<string>} values
+ * @param {Array.<string|number>} values
  * @param {StringifyOptions} [options]
  * @returns {string}
  */
