@@ -1,6 +1,6 @@
 {
   "name": "comma-separated-tokens",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Parse and stringify comma-separated tokens",
   "license": "MIT",
   "keywords": [
