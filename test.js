@@ -1,54 +1,69 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {parse, stringify} from './index.js'
 
-test('comma-separated-tokens', function (t) {
-  t.test('.parse()', function (st) {
-    // @ts-ignore runtime.
-    st.deepEqual(parse(), [], 'should return an empty array for an empty value')
+test('comma-separated-tokens', async function (t) {
+  await t.test('.parse()', function () {
+    assert.deepEqual(
+      // @ts-expect-error runtime.
+      parse(),
+      [],
+      'should return an empty array for an empty value'
+    )
 
-    st.deepEqual(
+    assert.deepEqual(
       parse(','),
       [''],
       'should return one empty entry for a single comma'
     )
 
-    st.deepEqual(
+    assert.deepEqual(
       parse(',,'),
       ['', ''],
       'should return two empty entry for a two comma’s'
     )
 
-    st.deepEqual(parse(' a ,b,,d d '), ['a', 'b', '', 'd d'], 'should work')
-
-    st.end()
+    assert.deepEqual(parse(' a ,b,,d d '), ['a', 'b', '', 'd d'], 'should work')
   })
 
-  t.test('.stringify()', function (st) {
-    st.deepEqual(
+  await t.test('.stringify()', function () {
+    assert.deepEqual(
       stringify([]),
       '',
       'should return an empty string for an empty array'
     )
 
-    st.deepEqual(
+    assert.deepEqual(
       stringify(['']),
       ',',
       'should return a single comma for an empty entry'
     )
 
-    st.deepEqual(
+    assert.deepEqual(
       stringify(['', '']),
       ', ,',
       'should return two comma’s for two empty entries'
     )
 
-    st.deepEqual(stringify(['', 'foo']), ', foo', 'should add an initial comma')
+    assert.deepEqual(
+      stringify(['', 'foo']),
+      ', foo',
+      'should add an initial comma'
+    )
 
-    st.deepEqual(stringify(['foo', '']), 'foo, ,', 'should add a final comma')
+    assert.deepEqual(
+      stringify(['foo', '']),
+      'foo, ,',
+      'should add a final comma'
+    )
 
-    st.deepEqual(stringify(['a', 'b', '', 'd d']), 'a, b, , d d', 'should work')
+    assert.deepEqual(
+      stringify(['a', 'b', '', 'd d']),
+      'a, b, , d d',
+      'should work'
+    )
 
-    st.deepEqual(
+    assert.deepEqual(
       stringify(['a', 'b', '', 'd d'], {
         padRight: true,
         padLeft: false
@@ -56,9 +71,5 @@ test('comma-separated-tokens', function (t) {
       'a ,b , ,d d',
       'should accept padding'
     )
-
-    st.end()
   })
-
-  t.end()
 })
